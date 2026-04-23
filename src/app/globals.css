@@ -158,3 +158,52 @@ body {
 input, textarea, select { background-color: var(--color-bg-input); color: var(--color-text-primary); border-color: var(--color-border); }
 input:focus, textarea:focus, select:focus { outline: none; border-color: var(--color-brand); box-shadow: 0 0 0 3px rgba(124,58,237,0.15); }
 .dark input:focus, .dark textarea:focus, .dark select:focus { box-shadow: 0 0 0 3px rgba(195,166,246,0.2); }
+
+/* ===== Button Classes ===== */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  text-decoration: none;
+  border: 2px solid var(--color-primary);
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: #FFFFFF;
+  color: var(--color-primary);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  text-decoration: none;
+  border: 2px solid var(--color-primary);
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Dark mode button overrides */
+.dark .btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
+.dark .btn-secondary:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-surface-dark);
+}
