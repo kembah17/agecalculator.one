@@ -1,18 +1,19 @@
 import Link from "next/link";
-import { tools, siteConfig } from "@/lib/tools-data";
+import { siteConfig } from "@/lib/tools-data";
 import AdSlot from "@/components/ui/AdSlot";
 import { WebSiteSchema } from "@/components/seo/JsonLd";
+import HomeToolGrid from "@/components/ui/HomeToolGrid";
 
 export default function Home() {
   return (
     <>
       <WebSiteSchema />
-      <section className="bg-gradient-to-br from-primary/20 via-surface dark:via-surface-dark to-primary/10 py-16 sm:py-24">
+      <section style={{ background: 'linear-gradient(135deg, color-mix(in srgb, var(--color-brand) 20%, transparent), var(--color-surface), color-mix(in srgb, var(--color-brand) 10%, transparent))' }} className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text dark:text-text-dark mb-6">
-            Free <span className="text-primary dark:text-primary-light">Date Calculator</span> &amp; Date Tools
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: 'var(--color-text-heading)' }}>
+            Free <span style={{ color: 'var(--color-brand)' }}>Date Calculator</span> &amp; Date Tools
           </h1>
-          <p className="text-lg sm:text-xl text-muted dark:text-text-dark-muted max-w-3xl mx-auto mb-8">
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-8" style={{ color: 'var(--color-text-secondary)' }}>
             Calculate your exact age, find days between dates, convert time zones, and more.
             All tools run 100% in your browser &mdash; your data never leaves your device.
           </p>
@@ -31,24 +32,10 @@ export default function Home() {
         <AdSlot label="Advertisement" />
 
         <section className="mt-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-text dark:text-text-dark text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8" style={{ color: 'var(--color-text-heading)' }}>
             Free Date &amp; Time Tools
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {tools.map((tool) => (
-              <Link
-                key={tool.slug}
-                href={`/${tool.slug}`}
-                className="card hover:border-primary dark:hover:border-primary-light transition-all duration-200 group hover:shadow-lg"
-              >
-                <div className="text-3xl mb-3">{tool.icon}</div>
-                <h3 className="text-lg font-bold text-text dark:text-text-dark group-hover:text-primary dark:group-hover:text-primary-light transition-colors">
-                  {tool.name}
-                </h3>
-                <p className="text-sm text-muted dark:text-text-dark-muted mt-2">{tool.shortDesc}</p>
-              </Link>
-            ))}
-          </div>
+          <HomeToolGrid />
         </section>
 
         <section className="mt-16">
@@ -56,32 +43,32 @@ export default function Home() {
         </section>
 
         <section className="mt-16">
-          <h2 className="text-2xl sm:text-3xl font-bold text-text dark:text-text-dark text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8" style={{ color: 'var(--color-text-heading)' }}>
             Why Use {siteConfig.name}?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="card text-center">
-              <div className="text-3xl mb-3">🔒</div>
-              <h3 className="font-bold text-text dark:text-text-dark mb-2">100% Private</h3>
-              <p className="text-sm text-muted dark:text-text-dark-muted">All calculations happen in your browser. We never collect, store, or transmit your personal data.</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+            <div style={{ backgroundColor: 'var(--color-bg-card)', border: '2px solid var(--color-border)', borderRadius: '0.75rem', padding: '1.5rem', textAlign: 'center' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🔒</div>
+              <h3 className="font-bold mb-2" style={{ color: 'var(--color-text-heading)' }}>100% Private</h3>
+              <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>All calculations happen in your browser. We never collect, store, or transmit your personal data.</p>
             </div>
-            <div className="card text-center">
-              <div className="text-3xl mb-3">⚡</div>
-              <h3 className="font-bold text-text dark:text-text-dark mb-2">Instant Results</h3>
-              <p className="text-sm text-muted dark:text-text-dark-muted">Get real-time calculations as you type. No waiting, no page reloads, no server requests.</p>
+            <div style={{ backgroundColor: 'var(--color-bg-card)', border: '2px solid var(--color-border)', borderRadius: '0.75rem', padding: '1.5rem', textAlign: 'center' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>⚡</div>
+              <h3 className="font-bold mb-2" style={{ color: 'var(--color-text-heading)' }}>Instant Results</h3>
+              <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>Get real-time calculations as you type. No waiting, no page reloads, no server requests.</p>
             </div>
-            <div className="card text-center">
-              <div className="text-3xl mb-3">🌍</div>
-              <h3 className="font-bold text-text dark:text-text-dark mb-2">Works Everywhere</h3>
-              <p className="text-sm text-muted dark:text-text-dark-muted">Responsive design works on desktop, tablet, and mobile. No app download required.</p>
+            <div style={{ backgroundColor: 'var(--color-bg-card)', border: '2px solid var(--color-border)', borderRadius: '0.75rem', padding: '1.5rem', textAlign: 'center' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🌍</div>
+              <h3 className="font-bold mb-2" style={{ color: 'var(--color-text-heading)' }}>Works Everywhere</h3>
+              <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>Responsive design works on desktop, tablet, and mobile. No app download required.</p>
             </div>
           </div>
         </section>
 
         <section className="mt-16">
-          <div className="card">
-            <h2 className="text-xl font-bold text-text dark:text-text-dark mb-4">About Date Calculator &amp; Date Tools</h2>
-            <div className="prose prose-sm max-w-none text-muted dark:text-text-dark-muted space-y-4">
+          <div style={{ backgroundColor: 'var(--color-bg-card)', border: '2px solid var(--color-border)', borderRadius: '0.75rem', padding: '2rem', boxShadow: 'var(--shadow-sm)' }}>
+            <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--color-text-heading)' }}>About Date Calculator &amp; Date Tools</h2>
+            <div className="prose prose-sm max-w-none space-y-4" style={{ color: 'var(--color-text-secondary)' }}>
               <p>
                 Welcome to datecalculator.one, your comprehensive suite of free online date and time calculation tools.
                 Whether you need to calculate your exact age down to the second, find the number of days between two dates,
