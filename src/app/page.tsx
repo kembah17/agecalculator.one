@@ -8,12 +8,12 @@ export default function Home() {
   return (
     <>
       <WebSiteSchema />
-      <section style={{ background: 'linear-gradient(135deg, color-mix(in srgb, var(--color-brand) 20%, var(--color-page-bg)), var(--color-page-bg), color-mix(in srgb, var(--color-brand) 10%, var(--color-page-bg)))' }} className="py-16 sm:py-24">
+      <section style={{ background: 'linear-gradient(135deg, color-mix(in srgb, var(--color-brand) 45%, var(--color-page-bg)), color-mix(in srgb, var(--color-brand) 25%, var(--color-page-bg)), color-mix(in srgb, var(--color-brand) 15%, var(--color-page-bg)))' }} className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: 'var(--color-text-heading)' }}>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
             Free <span style={{ color: 'var(--color-brand)' }}>Date Calculator</span> &amp; Date Tools
           </h1>
-          <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-8" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.9)' }}>
             Calculate your exact age, find days between dates, convert time zones, and more.
             All tools run 100% in your browser &mdash; your data never leaves your device.
           </p>
